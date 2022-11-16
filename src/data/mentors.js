@@ -1,7 +1,8 @@
-let buddies = [
+let mentors = [
   {
     firstName: "Dom",
     lastName: "Vin",
+    email: "dom.vin@email.com",
     languages: ["HTML", "CSS", "Javascript", "React"],
     availability: {
       "11/14/2022": ["10:00", "11:00", "13:10"],
@@ -14,4 +15,4 @@ let buddies = [
     },
   },
 ];
-export default buddies;
+export default mentors;
