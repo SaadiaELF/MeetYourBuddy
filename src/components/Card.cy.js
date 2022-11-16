@@ -2,7 +2,7 @@
 import Card from "./Card";
 
 describe("<Card>", () => {
-  it("mounts", () => {
+  it("card title should have text set to 'MeetYourMentor'", () => {
     cy.mount(<Card />);
     cy.get(".card__title").should("have.text", "MeetYourMentor");
   });
