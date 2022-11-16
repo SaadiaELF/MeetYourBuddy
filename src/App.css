@@ -23,3 +23,23 @@
 }
 
 /* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background-color: var(--lighter-grey);
+  border: 1px solid var(--lighter-grey);
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
+@media screen and (min-width:600px) {
+  .card {
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+}
