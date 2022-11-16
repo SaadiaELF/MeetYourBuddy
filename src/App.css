@@ -35,10 +35,26 @@
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
+.card__heading {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.card__icon {
+  width: 35px;
+  height: 35px;
+  background-image: url("./img/icon.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .card__title {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  padding-left: 0.5rem;
+  padding-left: 0.8rem;
+  color: var(--dark-grey);
 }
 
 @media screen and (min-width:600px) {
@@ -48,5 +64,5 @@
 
   .card__title {
     font-size: 1.2rem;
-   }
+  }
 }
