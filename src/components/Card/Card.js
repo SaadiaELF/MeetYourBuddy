@@ -1,4 +1,6 @@
 import React from "react";
+import Dropdown from "../Dropdown/Dropdown";
+const technologies = ["HTML", "CSS", "Javascript", "React"];
 
 const Card = () => {
   return (
@@ -8,7 +10,9 @@ const Card = () => {
         <div className="card__title">MeetYourMentor</div>
       </div>
 
-      <div className="card__body"></div>
+      <div className="card__body">
+        <Dropdown options={technologies} />
+      </div>
     </div>
   );
 };
