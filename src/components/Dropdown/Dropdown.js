@@ -8,7 +8,7 @@ const Dropdown = (props) => {
       </label>
 
       <select className="dropdown-select" name={props.name} id={props.name}>
-        <option key="-1" value="-1">
+        <option key="-1" value="-1" defaultValue>
           Select a {props.option}
         </option>
         {props.options.map((item, index) => {
