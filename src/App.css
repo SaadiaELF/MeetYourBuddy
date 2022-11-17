@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   width: 90%;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 2rem;
   margin: 1rem auto;
   background-color: var(--lighter-grey);
   border: 1px solid var(--lighter-grey);
@@ -82,6 +82,21 @@
 
 .dropdown-select option {
   font-size: 0.8rem;
+}
+
+/* Calendar */
+
+.react-calendar {
+  width: auto;
+  align-self: center;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
+abbr {
+  text-decoration: none;
 }
 
 @media screen and (min-width:600px) {
