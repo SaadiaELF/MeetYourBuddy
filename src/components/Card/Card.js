@@ -1,11 +1,7 @@
 import React from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import mentors from "../../data/mentors";
-
 const technologies = ["HTML", "CSS", "Javascript", "React"];
-const mentorsNames = mentors.map((mentor) => {
-  return `${mentor.firstName} ${mentor.lastName}`;
-});
 
 const Card = () => {
   return (
@@ -21,7 +17,7 @@ const Card = () => {
           option="technology"
           options={technologies}
         />
-        <Dropdown name="mentors" option="mentor" options={mentorsNames} />
+        <Dropdown name="mentors" option="mentor" options={mentors} />
       </div>
     </div>
   );

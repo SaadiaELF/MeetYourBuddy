@@ -14,7 +14,9 @@ const Dropdown = (props) => {
         {props.options.map((item, index) => {
           return (
             <option key={index} value={item}>
-              {item}
+              {typeof item == "object"
+                ? `${item.firstName} ${item.lastName}`
+                : item}
             </option>
           );
         })}
