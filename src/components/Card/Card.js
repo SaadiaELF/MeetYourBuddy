@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import mentors from "../../data/mentors";
-const technologies = ["HTML", "CSS", "Javascript", "React"];
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 const Card = () => {
+  const technologies = ["HTML", "CSS", "Javascript", "React"];
+  const [date, setDate] = useState(new Date());
+
   return (
     <div className="card">
       <div className="card__heading">
@@ -19,6 +23,7 @@ const Card = () => {
         />
         <Dropdown name="mentors" option="mentor" options={mentors} />
       </div>
+      <Calendar onChange={setDate} value={date} />
     </div>
   );
 };
