@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import mentors from "../../data/mentors";
 import Calendar from "react-calendar";
+import Button from "../Button/Button";
 import "react-calendar/dist/Calendar.css";
 
 const Card = () => {
@@ -24,6 +25,7 @@ const Card = () => {
         <Dropdown name="mentors" option="mentor" options={mentors} />
       </div>
       <Calendar onChange={setDate} value={date} />
+      <Button />
     </div>
   );
 };
