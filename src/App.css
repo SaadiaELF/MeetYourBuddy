@@ -89,14 +89,39 @@
 .react-calendar {
   width: auto;
   align-self: center;
-  margin: 0 1rem;
+  margin: 0 2rem;
   border: none;
   border-radius: 10px;
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
+.react-calendar__navigation__label span {
+  font-size: 1rem;
+}
+
+.react-calendar__navigation__arrow {
+  font-size: 1.2rem;
+}
+
 abbr {
+  font-size: 0.9rem;
   text-decoration: none;
+}
+
+.react-calendar__tile {
+  border-radius: 10px;
+}
+
+.react-calendar__tile--active {
+  background-color: var(--dark-red) !important;
+}
+
+.react-calendar__tile--active:hover {
+  background-color: var(--light-red) !important;
+}
+
+.react-calendar__tile--active abbr {
+  color: var(--white) !important;
 }
 
 @media screen and (min-width:600px) {
