@@ -76,6 +76,7 @@
   height: 2rem;
   font-size: 1rem;
   border: 1px solid var(--light-grey);
+  background-color: var(--white);
   border-radius: 10px;
   color: var(--light-grey)
 }
