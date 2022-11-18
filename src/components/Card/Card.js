@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Dropdown from "../Dropdown/Dropdown";
-import mentors from "../../data/mentors";
+import mentorsData from "../../data/mentors";
 import Button from "../Button/Button";
 import { Calendar } from "primereact/calendar";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
@@ -9,7 +9,16 @@ import "primeicons/primeicons.css";
 
 const Card = () => {
   const technologies = ["HTML", "CSS", "Javascript", "React"];
+  const [mentors, setMentors] = useState(mentorsData);
   const [dates, setDates] = useState([new Date()]);
+
+  // Handle technologies dropdown select
+  const handleTechnologiesDropdown = (e) => {
+    let filteredMentors = mentors.filter((mentor) => {
+      return mentor.languages.includes(e.target.value);
+    });
+    setMentors(filteredMentors);
+  };
 
   // Handle mentors dropdown select
   const handleMentorsDropdown = (e) => {
@@ -30,6 +39,7 @@ const Card = () => {
         return date > new Date();
       });
     setDates(dates);
+    setMentors(mentors);
   };
 
   return (
@@ -41,6 +51,7 @@ const Card = () => {
 
       <div className="card__body">
         <Dropdown
+          onChange={handleTechnologiesDropdown}
           name="technologies"
           option="technology"
           options={technologies}

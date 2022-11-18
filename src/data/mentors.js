@@ -20,7 +20,7 @@ let mentors = [
     firstName: "Mark",
     lastName: "Jk.",
     email: "mark.jk@email.com",
-    languages: ["HTML", "CSS", "Javascript", "React"],
+    languages: ["CSS", "Javascript", "React"],
     availability: {
       "11/15/2022": ["10:00", "11:00", "13:10"],
       "11/18/2022": ["11:00"],
