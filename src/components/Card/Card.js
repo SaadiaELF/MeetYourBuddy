@@ -11,10 +11,16 @@ const Card = () => {
   const technologies = ["HTML", "CSS", "Javascript", "React"];
   const [dates, setDates] = useState([new Date()]);
 
+  // Handle mentors dropdown select
   const handleMentorsDropdown = (e) => {
+    // Initialize date to today's date
     setDates([new Date()]);
+
+    // Get availability data
     let mentor = mentors.filter((mentor) => mentor.id === e.target.value);
     let dates = Object.keys(mentor[0].availability);
+
+    // convert dates and filter out dates before todays date
     dates = dates
       .map((date) => {
         let arr = date.split("/");
