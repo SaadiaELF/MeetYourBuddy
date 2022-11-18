@@ -15,10 +15,14 @@ const Card = () => {
     setDates([new Date()]);
     let mentor = mentors.filter((mentor) => mentor.id === e.target.value);
     let dates = Object.keys(mentor[0].availability);
-    dates = dates.map((date) => {
-      let arr = date.split("/");
-      return (date = new Date(arr[2], arr[0] - 1, arr[1]));
-    });
+    dates = dates
+      .map((date) => {
+        let arr = date.split("/");
+        return (date = new Date(arr[2], arr[0] - 1, arr[1]));
+      })
+      .filter((date) => {
+        return date > new Date();
+      });
     setDates(dates);
   };
 
@@ -42,6 +46,8 @@ const Card = () => {
           options={mentors}
         />
         <Calendar
+          minDate={new Date()}
+          readOnlyInput
           selectionMode="multiple"
           inline
           onChange={setDates}
