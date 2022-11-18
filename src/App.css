@@ -7,7 +7,7 @@
   --light-grey: #8D99AE;
   --lighter-grey: #EDF2F4;
   --dark-red: #D90429;
-  --light-red: #EF233C;
+  --light-red: #ef233b10;
   --white: #FFF;
   --black: #000;
   --font: 'Roboto', sans-serif;
@@ -83,6 +83,25 @@
 
 .dropdown-select option {
   font-size: 0.8rem;
+}
+
+/* Calendar */
+.p-datepicker {
+  padding: 0 !important;
+}
+
+.p-datepicker table td {
+  padding: 1px !important;
+}
+
+.p-datepicker table td>span.p-highlight {
+  color: var(--dark-red);
+  background: var(--light-red)
+}
+
+.p-datepicker table td.p-datepicker-today>span.p-highlight {
+  color: var(--dark-grey);
+  background: var(--lighter-grey);
 }
 
 /* Button */

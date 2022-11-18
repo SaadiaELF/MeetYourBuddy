@@ -12,6 +12,7 @@ const Card = () => {
   const [dates, setDates] = useState([new Date()]);
 
   const handleMentorsDropdown = (e) => {
+    setDates([new Date()]);
     let mentor = mentors.filter((mentor) => mentor.id === e.target.value);
     let dates = Object.keys(mentor[0].availability);
     dates = dates.map((date) => {
