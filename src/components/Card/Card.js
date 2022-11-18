@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import mentors from "../../data/mentors";
-import Calendar from "react-calendar";
+// import Calendar from "react-calendar";
+import { Calendar } from "primereact/calendar";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 import Button from "../Button/Button";
-import "react-calendar/dist/Calendar.css";
+// import "react-calendar/dist/Calendar.css";
 
 const Card = () => {
   const technologies = ["HTML", "CSS", "Javascript", "React"];
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState([new Date()]);
   // const [selected, setSelected] = useState("");
 
   const handleMentorsDropdown = (e) => {
@@ -23,7 +27,7 @@ const Card = () => {
       ));
     });
     console.log(datesArr, new Date());
-    setDate(new Date(2022, 10, 19), new Date(2022, 10, 22));
+    setDate(datesArr);
   };
   return (
     <div className="card">
@@ -44,7 +48,12 @@ const Card = () => {
           option="mentor"
           options={mentors}
         />
-        <Calendar onChange={setDate} value={date} />
+        <Calendar
+          inline
+          selectionMode="multiple"
+          onChange={setDate}
+          value={date}
+        />
         <Button />
       </div>
     </div>
