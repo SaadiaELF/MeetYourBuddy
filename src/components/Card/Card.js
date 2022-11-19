@@ -14,7 +14,7 @@ const Card = () => {
 
   // Handle technologies dropdown select
   const handleTechnologiesDropdown = (e) => {
-    let filteredMentors = mentors.filter((mentor) => {
+    let filteredMentors = mentorsData.filter((mentor) => {
       return mentor.languages.includes(e.target.value);
     });
     setMentors(filteredMentors);
