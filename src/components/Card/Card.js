@@ -18,6 +18,7 @@ const Card = () => {
       return mentor.languages.includes(e.target.value);
     });
     setMentors(filteredMentors);
+    setDates([new Date()]);
   };
 
   // Handle mentors dropdown select
