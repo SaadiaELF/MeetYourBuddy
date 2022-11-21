@@ -13,7 +13,7 @@ const Card = () => {
   const [dates, setDates] = useState([new Date()]);
 
   // Handle technologies dropdown select
-  const handleTechnologiesDropdown = (e) => {
+  const handleTechnologiesChange = (e) => {
     let filteredMentors = mentorsData.filter((mentor) => {
       return mentor.languages.includes(e.target.value);
     });
@@ -22,7 +22,7 @@ const Card = () => {
   };
 
   // Handle mentors dropdown select
-  const handleMentorsDropdown = (e) => {
+  const handleMentorsChange = (e) => {
     // Initialize date to today's date
     setDates([new Date()]);
 
@@ -52,13 +52,13 @@ const Card = () => {
 
       <div className="card__body">
         <Dropdown
-          onChange={handleTechnologiesDropdown}
+          onChange={handleTechnologiesChange}
           name="technologies"
           option="technology"
           options={technologies}
         />
         <Dropdown
-          onChange={handleMentorsDropdown}
+          onChange={handleMentorsChange}
           name="mentors"
           option="mentor"
           options={mentors}
