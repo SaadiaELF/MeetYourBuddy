@@ -15,16 +15,16 @@ function App() {
   const [dates, setDates] = useState([new Date()]);
 
   // Handle technologies dropdown select
-  const handleTechnologiesChange = (e) => {
+  function handleTechnologiesChange(e) {
     let filteredMentors = mentorsData.filter((mentor) => {
       return mentor.languages.includes(e.target.value);
     });
     setMentors(filteredMentors);
     setDates([new Date()]);
-  };
+  }
 
   // Handle mentors dropdown select
-  const handleMentorsChange = (e) => {
+  function handleMentorsChange(e) {
     // Initialize date to today's date
     setDates([new Date()]);
 
@@ -43,12 +43,17 @@ function App() {
       });
     setDates(dates);
     setMentors(mentors);
-  };
+  }
+
+  // Handle reset button click
+  function handleResetBtnClick() {
+    setDates([new Date()]);
+    setMentors(mentorsData);
+  }
 
   return (
     <>
       <Card>
-        {" "}
         <Dropdown
           onChange={handleTechnologiesChange}
           name="technologies"
@@ -69,7 +74,14 @@ function App() {
           onChange={setDates}
           value={dates}
         />
-        <Button />
+        <div className="btn-container">
+          <Button variant="primary" text="Confirm" />
+          <Button
+            variant="secondary"
+            text="Reset"
+            handleClick={handleResetBtnClick}
+          />
+        </div>
       </Card>
     </>
   );
