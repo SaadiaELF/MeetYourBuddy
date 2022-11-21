@@ -1,5 +1,6 @@
 /* global cy context */
 import App from "./App";
+import mentors from "./data/mentors";
 
 describe("<App>", () => {
   beforeEach(() => {
@@ -11,7 +12,7 @@ describe("<App>", () => {
     });
   });
 
-  context("Select menu tests", () => {
+  context("Dropdown menus tests", () => {
     it("Select Default value", () => {
       cy.get("#technologies").contains("Select a technology");
       cy.get("#mentors").contains("Select a mentor");
@@ -20,7 +21,7 @@ describe("<App>", () => {
       cy.get("#technologies > option").should("have.length", 5);
     });
     it("Mentors dropdown menu have all options", () => {
-      cy.get("#mentors > option").should("have.length", 3);
+      cy.get("#mentors > option").should("have.length", mentors.length + 1);
     });
   });
   context("Buttons tests", () => {
