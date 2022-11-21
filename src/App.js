@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Card from "./components/Card/Card";
 import Dropdown from "./components/Dropdown/Dropdown";
 import Button from "./components/Button/Button";
-import { Calendar } from "primereact/calendar";
+import TimeList from "./components/TimeList/TimeList";
+import moment from "moment";
 import mentorsData from "./data/mentors";
+import { Calendar } from "primereact/calendar";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
@@ -13,6 +15,7 @@ function App() {
   const technologies = ["HTML", "CSS", "Javascript", "React"];
   const [mentors, setMentors] = useState(mentorsData);
   const [dates, setDates] = useState([new Date()]);
+  const [date, setDate] = useState(moment().format("dddd, MMMM Do YYYY"));
 
   // Handle technologies dropdown select
   function handleTechnologiesChange(e) {
@@ -44,6 +47,10 @@ function App() {
     setDates(dates);
     setMentors(mentors);
   }
+  // Handle Select date
+  function handleSelectDate(e) {
+    setDate(moment(e.value).format("dddd, MMMM Do YYYY"));
+  }
 
   // Handle reset button click
   function handleResetBtnClick() {
@@ -72,6 +79,7 @@ function App() {
           selectionMode="multiple"
           inline
           onChange={setDates}
+          onSelect={handleSelectDate}
           value={dates}
         />
         <div className="btn-container">
@@ -82,6 +90,9 @@ function App() {
             handleClick={handleResetBtnClick}
           />
         </div>
+      </Card>
+      <Card>
+        <TimeList date={date} />
       </Card>
     </>
   );
