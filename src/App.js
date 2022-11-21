@@ -14,8 +14,10 @@ import "./App.css";
 function App() {
   const technologies = ["HTML", "CSS", "Javascript", "React"];
   const [mentors, setMentors] = useState(mentorsData);
+  const [mentor, setMentor] = useState(mentorsData[0]);
   const [dates, setDates] = useState([new Date()]);
-  const [date, setDate] = useState(moment().format("dddd, MMMM Do YYYY"));
+  const [date, setDate] = useState(moment(new Date()).format("MM/DD/YYYY"));
+  const [time, setTime] = useState([]);
 
   // Handle technologies dropdown select
   function handleTechnologiesChange(e) {
@@ -44,12 +46,17 @@ function App() {
       .filter((date) => {
         return date > new Date();
       });
+
+    // Setting state variable
     setDates(dates);
     setMentors(mentors);
+    setMentor(mentor);
   }
+
   // Handle Select date
   function handleSelectDate(e) {
-    setDate(moment(e.value).format("dddd, MMMM Do YYYY"));
+    setDate(e.value.toLocaleDateString());
+    setTime(mentor.availability[date]);
   }
 
   // Handle reset button click
@@ -92,7 +99,7 @@ function App() {
         </div>
       </Card>
       <Card>
-        <TimeList date={date} />
+        <TimeList date={date} time={time} />
       </Card>
     </>
   );
