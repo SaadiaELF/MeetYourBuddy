@@ -14,12 +14,13 @@ const Dropdown = (props) => {
         name={props.name}
         id={props.name}
       >
-        <option key="-1" value="-1" defaultValue>
+        <option className="option" key="-1" value="-1" defaultValue>
           Select a {props.option}
         </option>
         {props.options.map((item, index) => {
           return (
             <option
+              className="option"
               key={index}
               value={typeof item == "object" ? `${item.id}` : item}
             >
