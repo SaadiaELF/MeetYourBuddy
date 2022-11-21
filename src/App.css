@@ -97,7 +97,6 @@
   border-radius: 10px;
   color: var(--text-color);
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
-
 }
 
 .dropdown-select {
@@ -157,6 +156,7 @@
   color: var(--white);
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
 .btn--primary {
@@ -167,6 +167,16 @@
 .btn--secondary {
   background-color: var(--text-color);
   border: 1px solid var(--text-color);
+}
+
+.btn--primary:hover {
+  color: var(--primary-color);
+  background-color: var(--white);
+}
+
+.btn--secondary:hover {
+  color: var(--text-color);
+  background-color: var(--white);
 }
 
 /* Time list */
