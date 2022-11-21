@@ -1,0 +1,11 @@
+.time__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.time__container>.btn {
+    width: 100%;
+}
