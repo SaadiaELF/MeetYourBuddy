@@ -17,7 +17,7 @@ function App() {
   const [mentor, setMentor] = useState(mentorsData[0]);
   const [dates, setDates] = useState([new Date()]);
   const [date, setDate] = useState(moment(new Date()).format("MM/DD/YYYY"));
-  const [time, setTime] = useState([]);
+  const [time, setTime] = useState(["10:00", "12:30", "18:15"]);
 
   // Handle technologies dropdown select
   function handleTechnologiesChange(e) {

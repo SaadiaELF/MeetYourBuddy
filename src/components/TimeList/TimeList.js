@@ -8,7 +8,7 @@ const TimeList = (props) => {
       <p className="card__subtitle">
         {moment(props.date).format("dddd, MMMM Do YYYY")}
       </p>
-      <div className="time__options">
+      <div className="time__container">
         {props.time
           ? props.time.map((slot, index) => {
               return <Button key={index} variant="secondary" text={slot} />;
