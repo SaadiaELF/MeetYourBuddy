@@ -12,7 +12,7 @@ const TimeList = (props) => {
               return (
                 <Button
                   key={index}
-                  variant="secondary"
+                  variant="primary"
                   text={slot}
                   handleClick={props.handleClick}
                 />

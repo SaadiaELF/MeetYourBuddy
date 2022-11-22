@@ -92,6 +92,17 @@ function App() {
     setMessage(false);
   }
 
+  // Handle cancel button click
+  function handleCancelBtnClick() {
+    setShow(false);
+    setMessage(false);
+  }
+
+  // Format date function
+  function formatDate(date) {
+    return moment(date, "MM/DD/YYYY").format("dddd, MMMM Do YYYY");
+  }
+
   return (
     <>
       {!show ? (
@@ -134,9 +145,14 @@ function App() {
       {show ? (
         <Card>
           <TimeList
-            date={moment(date, "MM/DD/YYYY").format("dddd, MMMM Do YYYY")}
+            date={formatDate(date)}
             timeSlots={timeSlots}
             handleClick={handleTimeClick}
+          />
+          <Button
+            variant="secondary"
+            text="Cancel"
+            handleClick={handleCancelBtnClick}
           />
         </Card>
       ) : (
