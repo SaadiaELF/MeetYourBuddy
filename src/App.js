@@ -20,6 +20,7 @@ function App() {
   const [dates, setDates] = useState([new Date()]);
   const [date, setDate] = useState("");
   const [timeSlots, setTimeSlots] = useState([]);
+  const [time, setTime] = useState("");
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState(false);
 
@@ -77,16 +78,18 @@ function App() {
     }
   }
 
+  // Handle the time slot button click
+  function handleTimeClick(e) {
+    setTime(e.target.innerText);
+    setShow(false);
+    setMessage(true);
+  }
+
   // Handle reset button click
   function handleResetBtnClick() {
     setDates([new Date()]);
     setMentors(mentorsData);
-  }
-
-  // Handle the time slot button click
-  function handleTimeClick() {
-    setShow(false);
-    setMessage(true);
+    setMessage(false);
   }
 
   return (
@@ -114,7 +117,7 @@ function App() {
           onClick={handleSelectDate}
           value={dates}
         />
-        {message ? <Message /> : ""}
+        {message ? <Message day={date} time={time} /> : ""}
         <div className="btn-container">
           <Button variant="primary" text="Confirm" />
           <Button
@@ -127,7 +130,7 @@ function App() {
       {show ? (
         <Card>
           <TimeList
-            date={moment(date).format("dddd, MMMM Do YYYY")}
+            date={moment(date, "MM-DD-YYYY").format("dddd, MMMM Do YYYY")}
             timeSlots={timeSlots}
             handleClick={handleTimeClick}
           />

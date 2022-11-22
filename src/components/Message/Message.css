@@ -1,0 +1,13 @@
+.confirm-msg {
+    color: var(--primary-color);
+    font-weight: 600;
+    line-height: 1.5rem;
+    /* font-size: 1.1rem; */
+}
+
+@media screen and (min-width:600px) {
+    .confirm-msg {
+        font-size: 1.1rem;
+    }
+
+}
