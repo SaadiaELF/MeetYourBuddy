@@ -94,39 +94,43 @@ function App() {
 
   return (
     <>
-      <Card>
-        <Dropdown
-          onChange={handleTechnologiesChange}
-          name="technologies"
-          id="technologies"
-          option="technology"
-          options={technologies}
-        />
-        <Dropdown
-          onChange={handleMentorsChange}
-          name="mentors"
-          id="mentors"
-          option="mentor"
-          options={mentors}
-        />
-        <Calendar
-          minDate={new Date()}
-          readOnlyInput
-          selectionMode="multiple"
-          inline
-          onClick={handleSelectDate}
-          value={dates}
-        />
-        {message ? <Message day={date} time={time} /> : ""}
-        <div className="btn-container">
-          <Button variant="primary" text="Confirm" />
-          <Button
-            variant="secondary"
-            text="Reset"
-            handleClick={handleResetBtnClick}
+      {!show ? (
+        <Card>
+          <Dropdown
+            onChange={handleTechnologiesChange}
+            name="technologies"
+            id="technologies"
+            option="technology"
+            options={technologies}
           />
-        </div>
-      </Card>
+          <Dropdown
+            onChange={handleMentorsChange}
+            name="mentors"
+            id="mentors"
+            option="mentor"
+            options={mentors}
+          />
+          <Calendar
+            minDate={new Date()}
+            readOnlyInput
+            selectionMode="multiple"
+            inline
+            onClick={handleSelectDate}
+            value={dates}
+          />
+          {message ? <Message day={date} time={time} /> : ""}
+          <div className="btn-container">
+            <Button variant="primary" text="Confirm" />
+            <Button
+              variant="secondary"
+              text="Reset"
+              handleClick={handleResetBtnClick}
+            />
+          </div>
+        </Card>
+      ) : (
+        ""
+      )}
       {show ? (
         <Card>
           <TimeList
