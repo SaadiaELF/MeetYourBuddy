@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import React, { useState } from "react";
 import Card from "./components/Card/Card";
 import Dropdown from "./components/Dropdown/Dropdown";
@@ -55,8 +56,18 @@ function App() {
 
   // Handle Select date
   function handleSelectDate(e) {
-    setDate(e.value.toLocaleDateString());
-    setTime(mentor.availability[date]);
+    if (e.target.className === "p-highlight") {
+      const day = e.target.innerText;
+      const month =
+        document.getElementsByClassName("p-datepicker-month")[0].innerText;
+      const year =
+        document.getElementsByClassName("p-datepicker-year")[0].innerText;
+      const selectedDate = new Date(
+        `${day} ${month} ${year}`
+      ).toLocaleDateString();
+      setDate(selectedDate);
+      setTime(mentor[0].availability[selectedDate]);
+    }
   }
 
   // Handle reset button click
@@ -87,8 +98,7 @@ function App() {
           readOnlyInput
           selectionMode="multiple"
           inline
-          onChange={setDates}
-          onSelect={handleSelectDate}
+          onClick={handleSelectDate}
           value={dates}
         />
         <div className="btn-container">
