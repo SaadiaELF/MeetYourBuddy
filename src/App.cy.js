@@ -21,6 +21,10 @@ describe("<App>", () => {
     it("Technologies dropdown menu have all options", () => {
       cy.get("#technologies > option").should("have.length", 5);
     });
+    it("Select a technology option and get all the mentors", () => {
+      cy.get("#technologies").select("HTML");
+      cy.get("#mentors > option").should("have.length", 2);
+    });
     it("Mentors dropdown menu have all options", () => {
       cy.get("#mentors > option").should("have.length", mentors.length + 1);
       cy.get("#mentors")
