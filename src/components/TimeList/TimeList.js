@@ -1,14 +1,11 @@
 import React from "react";
-import moment from "moment";
 import Button from "../Button/Button";
 import "./TimeList.css";
 
 const TimeList = (props) => {
   return (
     <>
-      <p className="card__subtitle">
-        {moment(props.date).format("dddd, MMMM Do YYYY")}
-      </p>
+      <p className="card__subtitle">{props.date}</p>
       <div className="time__container">
         {props.time
           ? props.time.map((slot, index) => {

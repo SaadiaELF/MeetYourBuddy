@@ -5,6 +5,7 @@ import Dropdown from "./components/Dropdown/Dropdown";
 import Button from "./components/Button/Button";
 import TimeList from "./components/TimeList/TimeList";
 import mentorsData from "./data/mentors";
+import moment from "moment";
 import { Calendar } from "primereact/calendar";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
@@ -110,7 +111,10 @@ function App() {
         </div>
       </Card>
       <Card>
-        <TimeList date={date} time={time} />
+        <TimeList
+          date={moment(date).format("dddd, MMMM Do YYYY")}
+          time={time}
+        />
       </Card>
     </>
   );
