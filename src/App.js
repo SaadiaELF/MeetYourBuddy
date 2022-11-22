@@ -65,6 +65,8 @@ function App() {
       const selectedDate = new Date(
         `${day} ${month} ${year}`
       ).toLocaleDateString();
+
+      // Setting state variable
       setDate(selectedDate);
       setTime(mentor[0].availability[selectedDate]);
     }
