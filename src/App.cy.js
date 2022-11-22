@@ -1,6 +1,7 @@
 /* global cy context */
 import App from "./App";
 import mentors from "./data/mentors";
+const today = new Date().getDate();
 
 describe("<App>", () => {
   beforeEach(() => {
@@ -22,6 +23,14 @@ describe("<App>", () => {
     });
     it("Mentors dropdown menu have all options", () => {
       cy.get("#mentors > option").should("have.length", mentors.length + 1);
+      cy.get("#mentors")
+        .eq(0)
+        .contains(`${mentors[0].firstName} ${mentors[0].lastName}`);
+    });
+  });
+  context("Calendar tests", () => {
+    it("Today's date is highlighted ", () => {
+      cy.get(".p-highlight").should("have.text", today);
     });
   });
   context("Buttons tests", () => {
