@@ -68,7 +68,7 @@ function App() {
         document.getElementsByClassName("p-datepicker-year")[0].innerText;
       const selectedDate = new Date(
         `${day} ${month} ${year}`
-      ).toLocaleDateString();
+      ).toLocaleDateString("en-US");
 
       // Updating variables state
       setDate(selectedDate);
@@ -134,7 +134,7 @@ function App() {
       {show ? (
         <Card>
           <TimeList
-            date={moment(date, "MM-DD-YYYY").format("dddd, MMMM Do YYYY")}
+            date={moment(date, "MM/DD/YYYY").format("dddd, MMMM Do YYYY")}
             timeSlots={timeSlots}
             handleClick={handleTimeClick}
           />
