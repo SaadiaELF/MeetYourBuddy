@@ -71,12 +71,14 @@ function App() {
         <Dropdown
           onChange={handleTechnologiesChange}
           name="technologies"
+          id="technologies"
           option="technology"
           options={technologies}
         />
         <Dropdown
           onChange={handleMentorsChange}
           name="mentors"
+          id="mentors"
           option="mentor"
           options={mentors}
         />
