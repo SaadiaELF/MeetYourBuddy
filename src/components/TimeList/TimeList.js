@@ -9,7 +9,14 @@ const TimeList = (props) => {
       <div className="time__container">
         {props.time
           ? props.time.map((slot, index) => {
-              return <Button key={index} variant="secondary" text={slot} />;
+              return (
+                <Button
+                  key={index}
+                  variant="secondary"
+                  text={slot}
+                  handleClick={props.handleClick}
+                />
+              );
             })
           : ""}
       </div>

@@ -79,6 +79,9 @@ function App() {
     setDates([new Date()]);
     setMentors(mentorsData);
   }
+  function handleTimeClick() {
+    setShow(false);
+  }
 
   return (
     <>
@@ -119,6 +122,7 @@ function App() {
           <TimeList
             date={moment(date).format("dddd, MMMM Do YYYY")}
             time={time}
+            handleClick={handleTimeClick}
           />
         </Card>
       ) : (
