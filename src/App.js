@@ -4,7 +4,6 @@ import Card from "./components/Card/Card";
 import Dropdown from "./components/Dropdown/Dropdown";
 import Button from "./components/Button/Button";
 import TimeList from "./components/TimeList/TimeList";
-import moment from "moment";
 import mentorsData from "./data/mentors";
 import { Calendar } from "primereact/calendar";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
@@ -17,8 +16,8 @@ function App() {
   const [mentors, setMentors] = useState(mentorsData);
   const [mentor, setMentor] = useState(mentorsData[0]);
   const [dates, setDates] = useState([new Date()]);
-  const [date, setDate] = useState(moment(new Date()).format("MM/DD/YYYY"));
-  const [time, setTime] = useState(["10:00", "12:30", "18:15"]);
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState([]);
 
   // Handle technologies dropdown select
   function handleTechnologiesChange(e) {
