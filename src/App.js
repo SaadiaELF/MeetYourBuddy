@@ -4,6 +4,7 @@ import Card from "./components/Card/Card";
 import Dropdown from "./components/Dropdown/Dropdown";
 import Button from "./components/Button/Button";
 import TimeList from "./components/TimeList/TimeList";
+import Message from "./components/Message/Message";
 import mentorsData from "./data/mentors";
 import moment from "moment";
 import { Calendar } from "primereact/calendar";
@@ -18,8 +19,9 @@ function App() {
   const [mentor, setMentor] = useState(mentorsData[0]);
   const [dates, setDates] = useState([new Date()]);
   const [date, setDate] = useState("");
-  const [time, setTime] = useState([]);
+  const [timeSlots, setTimeSlots] = useState([]);
   const [show, setShow] = useState(false);
+  const [message, setMessage] = useState(false);
 
   // Handle technologies dropdown select
   function handleTechnologiesChange(e) {
@@ -69,8 +71,9 @@ function App() {
 
       // Updating variables state
       setDate(selectedDate);
-      setTime(mentor[0].availability[selectedDate]);
+      setTimeSlots(mentor[0].availability[selectedDate]);
       setShow(true);
+      setMessage(false);
     }
   }
 
@@ -79,8 +82,11 @@ function App() {
     setDates([new Date()]);
     setMentors(mentorsData);
   }
+
+  // Handle the time slot button click
   function handleTimeClick() {
     setShow(false);
+    setMessage(true);
   }
 
   return (
@@ -108,6 +114,7 @@ function App() {
           onClick={handleSelectDate}
           value={dates}
         />
+        {message ? <Message /> : ""}
         <div className="btn-container">
           <Button variant="primary" text="Confirm" />
           <Button
@@ -121,7 +128,7 @@ function App() {
         <Card>
           <TimeList
             date={moment(date).format("dddd, MMMM Do YYYY")}
-            time={time}
+            timeSlots={timeSlots}
             handleClick={handleTimeClick}
           />
         </Card>

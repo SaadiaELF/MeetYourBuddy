@@ -7,8 +7,8 @@ const TimeList = (props) => {
     <>
       <p className="card__subtitle">{props.date}</p>
       <div className="time__container">
-        {props.time
-          ? props.time.map((slot, index) => {
+        {props.timeSlots
+          ? props.timeSlots.map((slot, index) => {
               return (
                 <Button
                   key={index}
