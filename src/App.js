@@ -19,6 +19,7 @@ function App() {
   const [dates, setDates] = useState([new Date()]);
   const [date, setDate] = useState("");
   const [time, setTime] = useState([]);
+  const [show, setShow] = useState(false);
 
   // Handle technologies dropdown select
   function handleTechnologiesChange(e) {
@@ -48,7 +49,7 @@ function App() {
         return date > new Date();
       });
 
-    // Setting state variable
+    // Updating variables state
     setDates(dates);
     setMentors(mentors);
     setMentor(mentor);
@@ -66,9 +67,10 @@ function App() {
         `${day} ${month} ${year}`
       ).toLocaleDateString();
 
-      // Setting state variable
+      // Updating variables state
       setDate(selectedDate);
       setTime(mentor[0].availability[selectedDate]);
+      setShow(true);
     }
   }
 
@@ -112,12 +114,16 @@ function App() {
           />
         </div>
       </Card>
-      <Card>
-        <TimeList
-          date={moment(date).format("dddd, MMMM Do YYYY")}
-          time={time}
-        />
-      </Card>
+      {show ? (
+        <Card>
+          <TimeList
+            date={moment(date).format("dddd, MMMM Do YYYY")}
+            time={time}
+          />
+        </Card>
+      ) : (
+        ""
+      )}
     </>
   );
 }

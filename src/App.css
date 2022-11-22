@@ -53,7 +53,6 @@
 .p-datepicker table td.p-datepicker-today>span.p-highlight {
   color: var(--text-color);
   background: var(--bg-color);
-  z-index: 10;
 }
 
 .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year:enabled:hover, .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month:enabled:hover {
