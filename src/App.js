@@ -94,8 +94,6 @@ function App() {
 
   // Handle cancel button click
   function handleCancelBtnClick() {
-    setDates([new Date()]);
-    setMentors(mentorsData);
     setShow(false);
     setMessage(false);
   }
