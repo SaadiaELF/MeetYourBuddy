@@ -36,6 +36,13 @@ describe("<App>", () => {
     it("Today's date is highlighted ", () => {
       cy.get(".p-highlight").should("have.text", today);
     });
+    it("Show related dates when specific mentor selected", () => {
+      cy.get("#mentors").select("Dom Vin");
+      cy.get(".p-highlight").should(
+        "have.length",
+        Object.values(mentors[0].availability).length
+      );
+    });
   });
   context("Buttons tests", () => {
     it("Find button and click", () => {
