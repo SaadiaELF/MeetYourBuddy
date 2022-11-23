@@ -133,7 +133,11 @@ function App() {
           />
           {message ? <Message day={date} time={time} /> : ""}
           <div className="btn-container">
-            <Button variant="primary" text="Confirm" />
+            <Button
+              variant="primary"
+              text="Confirm"
+              handleClick={handleResetBtnClick}
+            />
             <Button
               variant="secondary"
               text="Reset"
