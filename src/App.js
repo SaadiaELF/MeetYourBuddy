@@ -12,6 +12,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "./App.css";
+import Container from "./components/Container/Container";
 
 function App() {
   const technologies = ["HTML", "CSS", "Javascript", "React"];
@@ -54,7 +55,6 @@ function App() {
 
     // Updating variables state
     setDates(dates);
-    setMentors(mentors);
     setMentor(mentor);
   }
 
@@ -132,7 +132,7 @@ function App() {
             value={dates}
           />
           {message ? <Message day={date} time={time} /> : ""}
-          <div className="btn-container">
+          <Container>
             <Button
               variant="primary"
               text="Confirm"
@@ -143,7 +143,7 @@ function App() {
               text="Reset"
               handleClick={handleResetBtnClick}
             />
-          </div>
+          </Container>
         </Card>
       ) : (
         ""

@@ -59,14 +59,6 @@
   color: var(--primary-color);
 }
 
-/* Button */
-.btn-container {
-  display: flex;
-  gap: 0.8rem;
-  justify-content: center;
-}
-
-
 @media screen and (min-width:600px) {
   #root {
     display: flex;
