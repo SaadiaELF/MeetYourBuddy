@@ -13,6 +13,7 @@ const Dropdown = (props) => {
         className="dropdown-select"
         name={props.name}
         id={props.id}
+        value={props.value}
       >
         <option className="option" key="-1" value="-1" defaultValue>
           Select a {props.option}

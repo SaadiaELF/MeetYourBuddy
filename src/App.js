@@ -22,6 +22,8 @@ function App() {
   const [date, setDate] = useState("");
   const [timeSlots, setTimeSlots] = useState([]);
   const [time, setTime] = useState("");
+  const [mentorOption, setMentorOption] = useState("");
+  const [techOption, setTechOption] = useState("");
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState(false);
 
@@ -32,6 +34,7 @@ function App() {
     });
     setMentors(filteredMentors);
     setDates([new Date()]);
+    setTechOption(e.target.value);
   }
 
   // Handle mentors dropdown select
@@ -56,6 +59,7 @@ function App() {
     // Updating variables state
     setDates(dates);
     setMentor(mentor);
+    setMentorOption(e.target.value);
   }
 
   // Handle Select date
@@ -90,6 +94,8 @@ function App() {
     setDates([new Date()]);
     setMentors(mentorsData);
     setMessage(false);
+    setTechOption("");
+    setMentorOption("");
   }
 
   // Handle cancel button click
@@ -113,6 +119,7 @@ function App() {
             id="technologies"
             option="technology"
             options={technologies}
+            value={techOption}
           />
           <Dropdown
             onChange={handleMentorsChange}
@@ -120,6 +127,7 @@ function App() {
             id="mentors"
             option="mentor"
             options={mentors}
+            value={mentorOption}
           />
           <Calendar
             minDate={new Date()}
